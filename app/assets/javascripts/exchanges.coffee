@@ -1,5 +1,12 @@
 # $(document).ready ->
 $(document).on 'turbolinks:load', ->
+
+  $('.reverse-btn').click ->
+    source = $("#source_currency").val()
+    target = $("#target_currency").val()
+    $("#source_currency").val(target)
+    $("#target_currency").val(source)
+
   $('form').submit ->
     if $('form').attr('action') == '/convert'
       $.ajax '/convert',

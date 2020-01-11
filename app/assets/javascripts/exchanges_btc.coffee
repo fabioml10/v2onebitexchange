@@ -1,6 +1,11 @@
 # $(document).ready ->
 $(document).on 'turbolinks:load', ->
 
+  # console.log window.location.pathname
+  if window.location.pathname != "/"
+    $('body').addClass('back-cripto')
+    $('body').removeClass('back-currency')
+
   $('.reverse-btc-btn').click ->
     sourceHtml = $("#source_currency").html()
     targetHtml = $("#target_currency").html()
@@ -51,5 +56,5 @@ sendBtcForm = ->
           alert textStatus
         success: (data, text, jqXHR) ->
           $('#result').val(data.value)
-      $('.loader').removeClass('loading')
+          $('.loader').removeClass('loading')
       return false;

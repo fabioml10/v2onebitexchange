@@ -5,8 +5,16 @@
 @import '_exchange_btc_box';
 @import 'loader';
 
-body {
+.back-currency {
   background: image-url("/background-img-1.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.back-cripto {
+  background: image-url("/background-img-2.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;

@@ -1,6 +1,10 @@
 # $(document).ready ->
 $(document).on 'turbolinks:load', ->
 
+  if window.location.pathname == "/"
+    $('body').addClass('back-currency')
+    $('body').removeClass('back-cripto')
+
   $('.reverse-btn').click ->
     source = $("#source_currency").val()
     target = $("#target_currency").val()
@@ -47,5 +51,5 @@ sendForm = ->
           alert textStatus
         success: (data, text, jqXHR) ->
           $('#result').val(data.value)
-      $('.loader').removeClass('loading')
+          $('.loader').removeClass('loading')
       return false;

@@ -25,6 +25,7 @@ $(document).on 'turbolinks:load', ->
     if hasAmount()
       sendForm()
 
+  #TODO: verificar se é necessário para os testes
   $('.btn-exchange').click ->
     if hasAmount()
       sendForm()

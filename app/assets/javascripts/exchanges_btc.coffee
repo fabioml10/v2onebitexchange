@@ -30,6 +30,7 @@ $(document).on 'turbolinks:load', ->
     if hasAmount()
       sendBtcForm()
 
+  #TODO: verificar se é necessário para os testes
   $('.btn-exchange-btc').click ->
     if hasAmount()
       sendBtcForm()

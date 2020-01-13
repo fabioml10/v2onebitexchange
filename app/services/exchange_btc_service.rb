@@ -10,8 +10,10 @@ class ExchangeBtcService
  
   def perform
     begin
+      # header = x-ba-key
+      key = "NDc1MmE3NTIxNjczNGM0NTg0YTA5N2ZjYmJiYTFiZmQ"
       url = "https://apiv2.bitcoinaverage.com/convert/global?from=#{@source_currency}&to=#{@target_currency}&amount=#{@amount}"
-      res = RestClient.get url
+      res = RestClient.get(url, :'x-ba-key' => key)
       value = JSON.parse(res.body)['price'].to_f
       
     rescue RestClient::ExceptionWithResponse => e
@@ -19,6 +21,3 @@ class ExchangeBtcService
     end
   end
 end
-
-# p exchange_api_url = 'https://currencydatafeed.com/api/data.php'
-#       p exchange_api_key = 'a1kpdyj5warenkzatf6a'
